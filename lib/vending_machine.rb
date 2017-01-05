@@ -9,4 +9,8 @@ class VendingMachine
     @inventory << snack
   end
 
+  def snacks_by_name
+    names = @inventory.map {|snack| snack.name }    
+  end
+
 end
