@@ -10,7 +10,11 @@ class VendingMachine
   end
 
   def snacks_by_name
-    names = @inventory.map {|snack| snack.name }    
+    names = @inventory.map {|snack| snack.name }
+  end
+
+  def how_many_snacks
+    @inventory.group_by {|snack| snack.quantity}
   end
 
 end
