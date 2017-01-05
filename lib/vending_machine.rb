@@ -25,4 +25,12 @@ class VendingMachine
     @inventory.reduce(0) {|memo, snack| memo + snack.quantity}
   end
 
+  def first_letters
+    @inventory.reduce("") {|memo, snack| memo + snack.name[0] }
+  end
+
+  def change_indexes
+    indexes = @inventory.map.with_index {|snack, index| index + 1}
+  end
+
 end
